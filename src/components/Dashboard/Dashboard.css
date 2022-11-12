@@ -11,7 +11,7 @@
  text-decoration: underline;
 }
 .table{
-    width:100%;
+    /* width:100%; */
 }
 .vertical-line{
     border-left: 1px solid black;

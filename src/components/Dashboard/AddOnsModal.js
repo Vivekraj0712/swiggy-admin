@@ -1,47 +1,51 @@
-import React from "react"
-import { Modal,useDisclosure,ModalBody,ModalFooter,Button,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton,FormControl,FormLabel,Input } from "@chakra-ui/react"
-function AddOnsModal() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-  
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)
-  
-    return (
-      <>
-        <Button onClick={onOpen}>Add Ons</Button>
-       
-  
-        <Modal
-          initialFocusRef={initialRef}
-          finalFocusRef={finalRef}
-          isOpen={isOpen}
-          onClose={onClose}
-        >
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Create your account</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody pb={6}>
-              <FormControl>
-                <FormLabel>First name</FormLabel>
-                <Input ref={initialRef} placeholder='First name' />
-              </FormControl>
-  
-              <FormControl mt={4}>
-                <FormLabel>Last name</FormLabel>
-                <Input placeholder='Last name' />
-              </FormControl>
-            </ModalBody>
-  
-            <ModalFooter>
-              <Button colorScheme='blue' mr={3}>
-                Save
-              </Button>
-              <Button onClick={onClose}>Cancel</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </>
-    )
-  }
-  export default AddOnsModal;
+import React, { useState } from 'react';
+import { Modal, useDisclosure, ModalBody, ModalFooter, Button, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, FormControl, FormLabel, Input } from '@chakra-ui/react';
+
+// {
+//   showModal ?  <AddOnsModal /> : null
+// }
+
+// const AddDishes = () => {
+// 	return <form></form>;
+// };
+
+// parent  dishes => add dishj =>modal => adddish
+// CustomModal => AddDishes,..props
+
+function CustomModal(props) {
+	const { handleModalClose, childComponent } = props;
+	const [open, setOpen] = useState(true);
+
+	const handleClose = () => {
+		setOpen(false);
+		handleModalClose();
+	};
+
+	return (
+		<Modal isOpen={open} onClose={handleClose}>
+			<ModalOverlay />
+			<ModalContent>
+				<ModalHeader>Create your account</ModalHeader>
+				<ModalCloseButton onClick={handleClose} />
+				<ModalBody pb={6}>{childComponent}</ModalBody>
+			</ModalContent>
+		</Modal>
+	);
+}
+export default CustomModal;
+
+// onClick =>dish table
+
+// common Modal Component => props => title,childComponent,handleModalClose
+// common Component => GenError
+
+// GenError => props => isLoading,isfailed,childComponent =>
+// if(isLoading)=> loader
+// is(isfailed)=> Oops unable to get Data
+// if everything is okay => childcomponent
+
+// Monday => task 1 and task 2
+
+
+//UI green =>gray
+// all buttons must be similar
