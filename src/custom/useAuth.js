@@ -12,3 +12,13 @@ const updateData = (data) => {
 };
 
 export default useAuth;
+
+// const [userData,setUserData]=useLocalStorage("authToken",defaultValue)
+// if not exist = key => localStorage => defaultValue || ""
+// setUserData(vishal) => localStorage => vishal
+
+
+//
+// customhook => key => localStorage,sessionStorage,
+// cookies
+//
