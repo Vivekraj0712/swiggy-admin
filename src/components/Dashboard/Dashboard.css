@@ -1,0 +1,21 @@
+.side-bar{
+    padding:0;
+    list-style-type: none;
+}
+.side-bar>li{
+    padding:5px 0;
+    color:blue;
+    cursor: pointer;
+}
+.side-bar>li:hover{
+ text-decoration: underline;
+}
+.table{
+    width:100%;
+}
+.vertical-line{
+    border-left: 1px solid black;
+}
+.logo{
+    height:3rem;
+}
