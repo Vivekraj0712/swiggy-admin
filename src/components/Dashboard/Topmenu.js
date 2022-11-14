@@ -1,6 +1,6 @@
 import react from "react"
 import { Flex,Box,Spacer } from "@chakra-ui/react"
-import CommonModal from "./CommonModal"
+import CommonModal from "../CommonModal"
 import ProfileModalContent from "./ProfileModalContent"
 
 const Topmenu=()=>{
@@ -12,7 +12,7 @@ const Topmenu=()=>{
             <img src={logo} alt="logo" className="logo"/>
             </Box>
             <Spacer />
-            <Box p='4' >            
+            <Box p='4' >
             <CommonModal title={title} clickButton={title} component={<ProfileModalContent/>}/>
             </Box>
      </Flex>

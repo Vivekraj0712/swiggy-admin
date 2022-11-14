@@ -12,6 +12,7 @@ const Dashboard = () => {
 			price: 'Rs.350',
 			location: 'Noida',
 			userid: '321',
+			isNumeric: true,
 		},
 		{
 			orderid: '124',
@@ -88,15 +89,7 @@ const Dashboard = () => {
 	return (
 		<Table variant='striped' colorScheme='teal' className='vertical-line'>
 			<Thead>
-				<Tr>
-					{orderHeadings ? (
-						orderHeadings.map((item) => {
-							return item === 'PRICE' ? <Th isNumeric>{item}</Th> : <Th>{item}</Th>;
-						})
-					) : (
-						<div>Loader...</div>
-					)}
-				</Tr>
+				<Tr>{orderHeadings ? orderHeadings.map((item) => <Th isNumeric={item.isNumeric}>{item}</Th>) : <div>Loader...</div>}</Tr>
 			</Thead>
 			<Tbody>{orderItems ? orderItems.map((item) => <OrdersContent ordersItems={item} />) : <div>Loader...</div>}</Tbody>
 		</Table>

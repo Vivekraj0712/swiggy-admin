@@ -1,14 +1,12 @@
 import { Box, Flex, Thead, Tr, Th, Table, Tbody } from '@chakra-ui/react';
-import Sidebar from '../../components/Sidebar';
-// import './Dashboard.css';
+import React from 'react';
 import '../Dashboard/Dashboard.css';
-// import DishesContent from './DishesContent';
 import DishesContent from '../Dashboard/DishesContent';
 import { useSelector } from 'react-redux';
 
 const Dishes = () => {
 	const reduxData = useSelector((state) => state);
-	console.log({reduxData});
+	console.log({ reduxData });
 
 	const columnHeadings = ['Name', 'Cost Price', 'Selling Price', 'Type', 'Cuisine', 'Image', 'Unit Type', 'Preparation Time', 'Add Ons', 'Actions'];
 	const dishesItems = [
@@ -63,7 +61,6 @@ const Dishes = () => {
 	return (
 		<div style={{ border: '2px solid red', height: '100vh' }}>
 			<Flex sx={{ height: '100%' }}>
-				<Sidebar />
 				<Box>
 					<Table sx={{ height: '100%' }} variant='striped' colorScheme='teal' className='vertical-line'>
 						<Thead>
@@ -76,7 +73,7 @@ const Dishes = () => {
 		</div>
 	);
 };
-export default Dishes;
+export default React.memo(Dishes);
 
 const Loader = () => {
 	return <div>Loader...</div>;
