@@ -1,6 +1,4 @@
 import { Tr, Td } from '@chakra-ui/react';
-import edit from '../../images/edit.jpg';
-import del from '../../images/delete.jpg';
 
 const DishesContent = (props) => {
 	const { dishesItems } = props;
@@ -17,8 +15,8 @@ const DishesContent = (props) => {
 			<Td>{dishesItems.preparationTime}</Td>
 			<Td>{dishesItems.addOns}</Td>
 			<Td style={{ display: 'flex', gap: '0.2rem' }}>
-				<img src={edit} alt='edit' style={{ height: '1.5rem' }} />
-				<img src={del} alt='delete' style={{ height: '1.5rem' }} />
+				{/* <img src={edit} alt='edit' style={{ height: '1.5rem' }} /> */}
+				{/* <img src={del} alt='delete' style={{ height: '1.5rem' }} /> */}
 			</Td>
 		</Tr>
 	);

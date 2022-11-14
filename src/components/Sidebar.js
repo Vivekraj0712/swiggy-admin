@@ -4,6 +4,9 @@ import { Square, Button } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import CommonModal from './CommonModal';
 import DishModalContent from './DishModalContent';
+import { useDispatch } from 'react-redux';
+import { add_chapter } from '../redux/actions/Action';
+
 
 const Sidebar = React.memo(() => {
 	const navigate = useNavigate();	
@@ -17,11 +20,18 @@ const Sidebar = React.memo(() => {
 }
     const title="Add New Dish"
 
+	const dispatch = useDispatch();
+
+	const manageAddRedux = () => {
+		dispatch(add_chapter('vishal'));
+	};
+
 	return (
-		<Square size='150px'>
-			<ul className='side-bar' style={{display:"flex",flexDirection:"column",justifyContent:"space-around"}}    onClick={navigateToPage}>
-				<li x>
-					<Button style={{width:"100%"}} data-id="orders" id="orders">Orders</Button>
+		<Square size='150px' sx={{ position: 'sticky', top: 0, left: 0 }}>
+			<ul className='side-bar'>
+				<button onClick={manageAddRedux}>ADd redux</button>
+				<li>
+					<Button id="orders" >Orders</Button>
 				</li>
 				<li >
 					<Button style={{width:"100%"}} data-id="dishes" id="dishes">Dishes</Button>

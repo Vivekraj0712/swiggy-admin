@@ -1,10 +1,15 @@
-import { Box, Flex, TableContainer, Thead, Tr, Th, Table, Tbody } from '@chakra-ui/react';
-import Sidebar from './Sidebar';
-import Topmenu from './Topmenu';
-import './Dashboard.css';
-import DishesContent from './DishesContent';
+import { Box, Flex, Thead, Tr, Th, Table, Tbody } from '@chakra-ui/react';
+import Sidebar from '../../components/Sidebar';
+// import './Dashboard.css';
+import '../Dashboard/Dashboard.css';
+// import DishesContent from './DishesContent';
+import DishesContent from '../Dashboard/DishesContent';
+import { useSelector } from 'react-redux';
 
 const Dishes = () => {
+	const reduxData = useSelector((state) => state);
+	console.log({reduxData});
+
 	const columnHeadings = ['Name', 'Cost Price', 'Selling Price', 'Type', 'Cuisine', 'Image', 'Unit Type', 'Preparation Time', 'Add Ons', 'Actions'];
 	const dishesItems = [
 		{
