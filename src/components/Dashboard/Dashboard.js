@@ -41,7 +41,7 @@ const Dashboard = () => {
   ]
   return (
     <VStack style={{alignItems:'stretch'}}>
-      <Topmenu />
+      
       <Flex >
         <Sidebar />
         {/*<Square flex="1" >*/}

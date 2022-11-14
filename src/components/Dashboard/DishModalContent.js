@@ -1,29 +1,15 @@
-import React from "react"
-import { Modal,useDisclosure,Box,RadioGroup,Radio,Stack,ModalBody,ModalFooter,Button,ModalOverlay,ModalContent,ModalHeader,ModalCloseButton,FormControl,FormLabel,Input } from "@chakra-ui/react"
-import {useState} from "react";
-function DishesModal() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+import react from 'react'
+import { Modal, useDisclosure, Box, RadioGroup, Radio, Stack, ModalBody, ModalFooter, Button, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, FormControl, FormLabel, Input } from '@chakra-ui/react';
+import {useState,useRef} from 'react'
+
+const DishModalContent=()=>{
     const [value, setValue] = useState('1')   
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)
-  
-    return (
-      <>
-        <Button onClick={onOpen}>Add New Dish</Button>
-       
-  
-        <Modal
-          initialFocusRef={initialRef}
-          finalFocusRef={finalRef}
-          isOpen={isOpen}
-          onClose={onClose}
-        >
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Add New Dish</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody pb={6} style={{display:'flex',flexDirection:'column',gap:'1rem'}}>
-              <Box style={{display:'flex',gap:'0.5rem'}}>
+    const initialRef = useRef(null)
+    const finalRef = useRef(null)
+
+    return(
+        <>
+        <Box style={{display:'flex',gap:'0.5rem'}}>
               <FormControl>
                 
                 <Input ref={initialRef} placeholder='Name' />
@@ -84,21 +70,7 @@ function DishesModal() {
                 <FormLabel>Image</FormLabel>
                 <Input type="file" placeholder='Image' />
               </FormControl>
-
-             
-
-             
-            </ModalBody>
-  
-            <ModalFooter>
-              <Button colorScheme='blue' mr={3}>
-                Save
-              </Button>
-              <Button onClick={onClose}>Cancel</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </>
+              </>
     )
-  }
-  export default DishesModal;
+}
+export default DishModalContent

@@ -4,7 +4,7 @@
 }
 .side-bar>li{
     padding:5px 0;
-    color:blue;
+    color:black;
     cursor: pointer;
 }
 .side-bar>li:hover{
