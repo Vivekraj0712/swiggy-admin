@@ -1,3 +1,4 @@
+import React from "react"
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import Routes from './Routes';
@@ -10,4 +11,4 @@ function App() {
 	);
 }
 
-export default App;
+export default React.memo(App);

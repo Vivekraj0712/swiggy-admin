@@ -30,4 +30,4 @@ function CommonModal(props) {
 		</Modal>
 	);
 }
-export default CommonModal;
+export default React.memo(CommonModal);

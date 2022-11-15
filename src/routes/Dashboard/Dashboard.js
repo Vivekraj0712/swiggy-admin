@@ -1,3 +1,4 @@
+import React from 'react';
 import { Flex, Thead, Tr, Th, Table, Tbody, VStack } from '@chakra-ui/react';
 import Sidebar from '../../components/Sidebar';
 import './Dashboard.css';
@@ -85,6 +86,168 @@ const Dashboard = () => {
 			location: 'Delhi',
 			userid: '432',
 		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
+		
+		{
+			orderid: '126',
+			dish: '2 plate Chicken Momos',
+			price: 'Rs.350',
+			location: 'Delhi',
+			userid: '432',
+		},
 	];
 	return (
 		<Table variant='striped' colorScheme='teal' className='vertical-line'>
@@ -95,4 +258,4 @@ const Dashboard = () => {
 		</Table>
 	);
 };
-export default Dashboard;
+export default React.memo(Dashboard);

@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import { Modal, useDisclosure, Box, RadioGroup, Radio, Stack, ModalBody, ModalFooter, Button, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import { useState, useRef } from 'react';
 
@@ -65,4 +65,4 @@ const DishModalContent = () => {
 		</>
 	);
 };
-export default DishModalContent;
+export default React.memo(DishModalContent);

@@ -4,12 +4,12 @@ import Dashboard from './routes/Dashboard/Dashboard';
 import { Routes as ReactRoutes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dishes from './routes/Dishes/Dishes';
-import Topmenu from './components/Topmenu';
+import Header from './components/Header';
 
 const Routes = () => {
 	return (
 		<Box sx={{ position: 'relative' }}>
-			<Topmenu />
+			<Header />
 			<VStack style={{ alignItems: 'stretch', overflow: 'hidden !important', justifyContent: 'stretch' }}>
 				<ReactRoutes>
 					<Route path='/' element={<Sidebar component={<Dishes />} />} />

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Tr, Td } from '@chakra-ui/react';
 // import edit from "../../images/edit.jpg"
 
@@ -17,11 +18,11 @@ const OrdersContent = (props) => {
 				<Td>{ordersItems.userid}</Td>
 				<Td style={{ display: 'flex', gap: '0.2rem' }}>
 					<img src={'./images/edit.jpg'} alt='edit' style={{ height: '1.5rem' }} />
-					<img src={'./images/edit.jpg'} alt='delete' style={{ height: '1.5rem' }} />
+					<img src={'./images/delete.jpg'} alt='delete' style={{ height: '1.5rem' }} />
 				</Td>
 			</>
 		</Tr>
 	);
 };
 
-export default OrdersContent;
+export default React.memo(OrdersContent);

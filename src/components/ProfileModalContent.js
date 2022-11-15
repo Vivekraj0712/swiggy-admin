@@ -1,18 +1,12 @@
-import React from 'react';
-import { useState } from 'react';
-import { Modal, useDisclosure, Box, RadioGroup, Radio, Stack, ModalBody, ModalFooter, Button, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, FormControl, FormLabel, Input } from '@chakra-ui/react';
-function ProfileModal() {
-	const { isOpen, onOpen, onClose } = useDisclosure();
-	const [value, setValue] = useState('1');
+import React from "react";
+import {useState} from "react"
+import { Box, RadioGroup, Radio, Stack, FormControl, FormLabel, Input } from '@chakra-ui/react';
 
-	return (
-		<Modal isOpen={isOpen} onClose={onClose}>
-			<ModalOverlay />
-			<ModalContent>
-				<ModalHeader>My Profile</ModalHeader>
-				<ModalCloseButton />
-				<ModalBody pb={6}>
-					<Box style={{ display: 'flex', gap: '0.5rem' }}>
+const ProfileModalContent=()=>{
+    const [value, setValue] = useState('1');
+    return(
+        <>
+        <Box style={{ display: 'flex', gap: '0.5rem' }}>
 						<FormControl>
 							<FormLabel>Name</FormLabel>
 							<Input placeholder='Name' />
@@ -59,16 +53,8 @@ function ProfileModal() {
 							</Stack>
 						</RadioGroup>
 					</FormControl>
-				</ModalBody>
-
-				<ModalFooter>
-					<Button colorScheme='blue' mr={3}>
-						Save
-					</Button>
-					<Button onClick={onClose}>Cancel</Button>
-				</ModalFooter>
-			</ModalContent>
-		</Modal>
-	);
+	        </>
+    )
 }
-export default ProfileModal;
+
+export default React.memo(ProfileModalContent);
