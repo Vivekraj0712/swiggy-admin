@@ -15,14 +15,13 @@ const Sidebar = React.memo((props) => {
 	const openDrawer = () => setShowDrawer(true);
 
 	const navigateToPage = (e) => {
-		e.target.id==="dishes"?navigate("/"):navigate("/"+e.target.id);
+		e.target.id==="dishes"?navigate("/dishes"):navigate("/"+e.target.id);
 		
 	};
 
 	const manageAddRedux = () => {
 		dispatch(add_chapter('vishal'));
 	};
-
 	// left code: position fixed
 	// right code : scrollable
 

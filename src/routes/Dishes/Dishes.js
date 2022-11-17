@@ -5,8 +5,8 @@ import DishesContent from '../Dashboard/DishesContent';
 import { useSelector } from 'react-redux';
 
 const Dishes = () => {
-	const reduxData = useSelector((state) => state);
-	console.log({ reduxData });
+	// const reduxData = useSelector((state) => state);
+	// console.log({ reduxData });
 
 	const columnHeadings = ['Name', 'Cost Price', 'Selling Price', 'Type', 'Cuisine', 'Image', 'Unit Type', 'Preparation Time', 'Add Ons', 'Actions'];
 	const dishesItems = [
