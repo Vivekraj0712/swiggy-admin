@@ -1,18 +1,16 @@
-import React from 'react'
-import Dropdown from './Dropdown'
-import ChapterComponent from './ChapterComponent'
+import React from 'react';
+import Dropdown from './Dropdown';
+import ChapterComponent from './ChapterComponent';
 
 const Test = () => {
-    
-    return (
-        <>
-            <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
-            <Dropdown />
-            <ChapterComponent/>
-            </div>
-           
-        </>
-    )
-}
+	return (
+		<>
+			<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+				<Dropdown />
+				<ChapterComponent />
+			</div>
+		</>
+	);
+};
 
-export default Test
+export default Test;
