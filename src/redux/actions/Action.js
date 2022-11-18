@@ -33,3 +33,14 @@ export const filter_chapters = (subjectId) => {
 		},
 	};
 };
+
+export const edit_chapters=(id,chapterName)=>{
+	return{
+		type:'EDIT_CHAPTERS',
+		payload:{
+			id,
+			chapterName,
+			
+		},
+	};
+};

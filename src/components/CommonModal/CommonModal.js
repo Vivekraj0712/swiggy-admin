@@ -21,9 +21,7 @@ function CommonModal(props) {
 				<ModalCloseButton onClick={handleCloseModal} />
 				<ModalBody pb={6}>{component}</ModalBody>
 				<ModalFooter>
-					<Button colorScheme='blue' mr={3}>
-						Save
-					</Button>
+					
 					<Button onClick={handleCloseModal}>Cancel</Button>
 				</ModalFooter>
 			</ModalContent>
