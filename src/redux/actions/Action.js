@@ -44,3 +44,23 @@ export const edit_chapters=(id,chapterName)=>{
 		},
 	};
 };
+
+export const delete_chapters=(id)=>{
+	return{
+		type:'DELETE_CHAPTERS',
+		payload:{
+			id
+			
+			
+		},
+	};
+};
+
+export const add_chapters=(chapterName)=>{
+	return{
+		type:'ADD_CHAPTERS',
+		payload:{			
+			chapterName,			
+		},
+	};
+};

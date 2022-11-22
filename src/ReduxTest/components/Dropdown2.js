@@ -8,6 +8,7 @@ const Dropdown2 = (props) => {
 	// const { standardId } = props;
 	const [selectedSubject, setselectedSubject] = useState();
 	const currentSubjects = useSelector((state) => state.currentSubjects);
+	console.log("dropdown2",currentSubjects)
 	// const subs = subjects.courseData[0].subjects;
 
 	const dispatch = useDispatch();

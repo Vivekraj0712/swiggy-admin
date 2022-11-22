@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useState } from "react";
-import { edit_chapters } from "../../redux/actions/Action";
+import { add_chapters } from "../../redux/actions/Action";
 import {
   Box,
   RadioGroup,
@@ -12,10 +12,10 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-const EditChapterComponent = (props) => {
+const AddChapterComponent = (props) => {
   // const valref=useRef()
-  const { chapter, closeModal } = props;
-  const [value, setValue] = useState(chapter[1]);
+  const { closeModal } = props;
+  const [value, setValue] = useState('');
   const dispatch = useDispatch();
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -24,8 +24,8 @@ const EditChapterComponent = (props) => {
   //  //valref.current.value=chapter[1];
   // },[])
 
-  const handleClick = () => {
-    dispatch(edit_chapters(chapter[0], value));
+  const handleClick = (e) => {    
+    dispatch(add_chapters(value));
     closeModal();
   };
   return (
@@ -45,4 +45,4 @@ const EditChapterComponent = (props) => {
   );
 };
 
-export default EditChapterComponent;
+export default AddChapterComponent;

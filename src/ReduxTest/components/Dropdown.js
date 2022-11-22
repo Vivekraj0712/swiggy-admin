@@ -10,7 +10,7 @@ const testData = require('../../redux/Data.json');
 const Dropdown = () => {
 	const [standard, setStandard] = useState();
 	const reduxData = useSelector((state) => state.courseData);
-
+    console.log({reduxData})
 	const dispatch = useDispatch();
 
 	const handleChange = (e) => {
