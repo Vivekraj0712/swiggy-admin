@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {useState,useEffect} from "react"
 import { useSelector,useDispatch } from 'react-redux';
 import { TableContainer, Table, Thead, Tr, Th, Tbody, Td, Tfoot,Button } from '@chakra-ui/react';
@@ -8,18 +8,20 @@ import AddChapterComponent from './AddChapterComponent';
 import { add_chapter, add_chapters, delete_chapters } from '../../redux/actions/Action';
 import Stars1 from './Stars1';
 import "./bg.css";
+import Toast from '../../components/Toast/Toast';
 const ChapterComponent = () => {
 	const starsArr=[1,2,3,4,5]
 	const [showModal,setShowModal]=useState(false)
 	const [showAddModal,setShowAddModal]=useState(false)
 	const [chapter,setChapter]=useState()
+	const [id,setId]=useState(0)
 	const closeModal = () => setShowModal(false);
 	const openModal = () => setShowModal(true);
 	const closeAddModal = () => setShowAddModal(false);
 	const openAddModal = () => setShowAddModal(true);
     const dispatch=useDispatch() 
 	const chapters = useSelector((state) => state.currentChapters);
-     
+    const uref=useRef([]);
    const handleAdd=()=>{
 	   if(chapters){
         openAddModal()
@@ -42,7 +44,7 @@ const ChapterComponent = () => {
 	}
    
 	const clickFunc=(id)=>{
-	
+	    alert(uref.current.id)
 		if(document.getElementById(id).style.color==="yellow"){
 			let selectedId=id+1;
 			for(let i=selectedId;i<=5;i++){
@@ -53,33 +55,34 @@ const ChapterComponent = () => {
 				document.getElementById(i).style.color="yellow"		
 				}
 		}
-		switch(id){
-			case 1:{
-			document.getElementById("tab").className="bg-red"
-			 return true;
-			}
-			case 2:{
-			document.getElementById("tab").className="bg-red"	
-				return true;
-			   }
-			case 3:{
-			document.getElementById("tab").className="bg-orange"	
-				return true;
-			   }
-			case 4:{
-			document.getElementById("tab").className="bg-orange"	
-				return true;
-			   }  
-			case 5:{
-			document.getElementById("tab").className="bg-green"	
-				return true;
-			   }   
+		
+		// switch(id){
+		// 	case 1:{
+		// 	document.getElementById("tab").className="bg-red"
+		// 	 return true;
+		// 	}
+		// 	case 2:{
+		// 	document.getElementById("tab").className="bg-red"	
+		// 		return true;
+		// 	   }
+		// 	case 3:{
+		// 	document.getElementById("tab").className="bg-orange"	
+		// 		return true;
+		// 	   }
+		// 	case 4:{
+		// 	document.getElementById("tab").className="bg-orange"	
+		// 		return true;
+		// 	   }  
+		// 	case 5:{
+		// 	document.getElementById("tab").className="bg-green"	
+		// 		return true;
+		// 	   }   
 		   
-			default:{
-				document.getElementById("tab").className=""	
-				return true
-			}
-		}	
+		// 	default:{
+		// 		document.getElementById("tab").className=""	
+		// 		return true
+		// 	}
+		// }	
 
 	}
 	
@@ -119,10 +122,10 @@ const ChapterComponent = () => {
 					<Tfoot></Tfoot>
 				</Table>
 			</TableContainer>
-			<div style={{display:"flex"}}>{starsArr.map(item=><Stars1 id={item} clickFunc={clickFunc}/>)}</div>	
+			<div style={{display:"flex"}}>{starsArr.map((item,i)=><Stars1 ref={uref.current[i]} id={item} clickFunc={clickFunc}/>)}</div>	
 			{showModal?<CommonModal  closeModal={closeModal} title="Edit Chapter" component={<EditChapterComponent chapter={chapter} closeModal={closeModal}/>}/>:null}
 			{showAddModal?<CommonModal  closeModal={closeAddModal} title="Add Chapter" component={<AddChapterComponent  closeModal={closeAddModal}/>}/>:null}
-
+           <Toast title="Some Sample Title" description="This is a Sample Description" duration="3000"/>
 		</>
 	);
 };

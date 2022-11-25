@@ -6,7 +6,7 @@ const Dashboard = lazy(() => import('./routes/Dashboard/Dashboard'));
 const Sidebar = lazy(() => import('./components/Sidebar'));
 const Dishes = lazy(() => import('./routes/Dishes/Dishes'));
 const Header = lazy(() => import('./components/Header'));
-// const Test = lazy(() => import('./ReduxTest/components/Test'));
+const Test1 = lazy(() => import('./ReduxTest/components/Test1'));
 const Test = lazy(() => import('./routes/Test'));
 
 const Dropdown = lazy(() => import('./ReduxTest/components/Dropdown'));
@@ -24,7 +24,7 @@ const Routes = () => {
 					{/* {Public Routes} */}
 
 					<Route path='/' element={<MainComponent component={<Dashboard />} />} />
-					{/* <Route path='/redux/test' element={<MainComponent component={<Test />} />} /> */}
+					 <Route path='/redux/test' element={<MainComponent component={<Test1 />} />} /> 
 					<Route path='/test' element={<MainComponent component={<Test />} />} />
 				</ReactRoutes>
 			</VStack>
