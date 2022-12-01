@@ -1,13 +1,32 @@
 import { Box, Flex, Thead, Tr, Th, Table, Tbody } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Dashboard/Dashboard.css';
 import DishesContent from '../Dashboard/DishesContent';
 import { useSelector } from 'react-redux';
+import {getAllPosts} from '../../redux/reducers/PostReducer'
+import { useDispatch } from 'react-redux';
+import GenError from '../../components/GenError/GenError';
 
 const Dishes = () => {
 	// const reduxData = useSelector((state) => state);
 	// console.log({ reduxData });
+	
 
+const dispatch = useDispatch();
+const posts = useSelector(state => state.posts)
+const {getAllPostStatus,allPosts}=posts
+useEffect(() => {
+ dispatch(getAllPosts()) 
+   
+},[])
+
+	
+console.log({posts}) 
+	
+    
+ 	
+
+    
 	const columnHeadings = ['Name', 'Cost Price', 'Selling Price', 'Type', 'Cuisine', 'Image', 'Unit Type', 'Preparation Time', 'Add Ons', 'Actions'];
 	const dishesItems = [
 		{
@@ -272,13 +291,16 @@ const Dishes = () => {
 
 	];
 	return (
-		
+   
+                    <>
+	                <GenError childComponent={posts.allPosts.map((item)=><div>{item.title}</div>)} status={getAllPostStatus} dataToCheck={allPosts.length!==0}/>
 					<Table  variant='striped' colorScheme='teal' className='vertical-line'>
 						<Thead>
 							<Tr>{columnHeadings ? columnHeadings.map((item) => <Th>{item}</Th>) : <Loader />}</Tr>
 						</Thead>
 						<Tbody>{dishesItems ? dishesItems.map((item) => <DishesContent dishesItems={item} />) : <Loader />}</Tbody>
 					</Table>
+					</>
 				
 	);
 };

@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 import STATUS from '../Common';
-import Loader from '../components/Loader'
+import Loader from '../../components/Loader/Loader'
 import ErrorFound from '../ErrorFound/ErrorFound';
 import NoDataFound from '../NoDataFound/NoDataFound';
 // PROPS
@@ -19,9 +19,8 @@ import NoDataFound from '../NoDataFound/NoDataFound';
 // GenError => getAllOrderStatus ,dataToCheck =allOrders.length!==0,childcomponent
 
 const GenError = (props) => {  
-	const { status, childComponent, dataToCheck } = props;
-  
-  return <Box>{status === STATUS.FETCHING ? <Loader /> : status === STATUS.FAILED ? <ErrorFound /> : status === STATUS.SUCCESS && dataToCheck ? childComponent : <NoDataFound/>}</Box>;
+	const { status,  dataToCheck } = props;  
+  return <>{status === STATUS.FETCHING ? <Loader /> : status === STATUS.FAILED ? <ErrorFound title="Error" description="There was some error"/> : status === STATUS.SUCCESS && dataToCheck ? props.children : <NoDataFound warning="No Data Found"/>}</>;
 };
 
 export default GenError;

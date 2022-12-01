@@ -1,15 +1,17 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { VStack, Box } from '@chakra-ui/react';
 import { Routes as ReactRoutes, Route, useNavigate } from 'react-router-dom';
+import Posts from './components/MiniProject/Posts';
 
 const Dashboard = lazy(() => import('./routes/Dashboard/Dashboard'));
-const Sidebar = lazy(() => import('./components/Sidebar'));
+const Sidebar = lazy(() => import('./components/CommonModal/Sidebar'));
 const Dishes = lazy(() => import('./routes/Dishes/Dishes'));
 const Header = lazy(() => import('./components/Header'));
-const Test1 = lazy(() => import('./ReduxTest/components/Test1'));
+//const Test1 = lazy(() => import('./ReduxTest/components/Test1'));
 const Test = lazy(() => import('./routes/Test'));
 
-const Dropdown = lazy(() => import('./ReduxTest/components/Dropdown'));
+
+//const Dropdown = lazy(() => import('./ReduxTest/components/Dropdown'));
 
 const Routes = () => {
 	return (
@@ -19,12 +21,12 @@ const Routes = () => {
 				<ReactRoutes>
 					{/* {Private Routes} */}
 					<Route path='/dishes' element={<MainComponent isPrivate={true} component={<Dishes />} />} />
-					<Route path='/redux/dropdown' element={<MainComponent isPrivate={true} component={<Dropdown />} />} />
+					{/* <Route path='/redux/dropdown' element={<MainComponent isPrivate={true} component={<Dropdown />} />} /> */}
 
 					{/* {Public Routes} */}
-
+                    <Route path='/miniproject' element={<Posts/>}/>
 					<Route path='/' element={<MainComponent component={<Dashboard />} />} />
-					 <Route path='/redux/test' element={<MainComponent component={<Test1 />} />} /> 
+					 {/* <Route path='/redux/test' element={<MainComponent component={<Test1 />} />} />  */}
 					<Route path='/test' element={<MainComponent component={<Test />} />} />
 				</ReactRoutes>
 			</VStack>

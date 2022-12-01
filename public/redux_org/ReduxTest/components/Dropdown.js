@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { filter_standards, filter_subjects } from '../../redux/actions/Action';
+import { filter_standards, filter_subjects } from '../../../redux/actions/Action';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { Select } from '@chakra-ui/react';
 import Dropdown2 from './Dropdown2';
-const testData = require('../../redux/Data.json');
+const testData = require('../../../redux/Data.json');
 
 const Dropdown = () => {
 	const [standard, setStandard] = useState();

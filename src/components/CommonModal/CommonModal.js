@@ -4,7 +4,7 @@ import { Modal, ModalBody, ModalFooter, Button, ModalOverlay, ModalContent, Moda
 
 function CommonModal(props) {
 	const {successCallBack, title, component, closeModal, style,className } = props;
-	console.log("PROPSSSS",{ title,successCallBack, component, closeModal, style,className });
+	//console.log("PROPSSSS",{ title,successCallBack, component, closeModal, style,className });
 
 	const [showModal, setShowModal] = useState(true);
 
@@ -21,7 +21,7 @@ function CommonModal(props) {
 				<ModalCloseButton onClick={handleCloseModal} />
 				<ModalBody pb={6}>{component}</ModalBody>
 				<ModalFooter>
-				<Button colorScheme="blue" onClick={successCallBack} mr={3}>
+				<Button colorScheme="blue" onClick={successCallBack} isLoading={true} mr={3}>
         Save
       </Button>
 					<Button onClick={handleCloseModal}>Cancel</Button>

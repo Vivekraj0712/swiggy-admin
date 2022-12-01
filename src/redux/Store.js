@@ -1,14 +1,8 @@
-import reducer from './reducers/reducer';
-import { legacy_createStore as createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import reducer from './reducers/index';
 
-// const appReducer = combineReducers({
-// 	reducer,
-// 	dish: dishReducer,
-// 	testReducer,
-// 	subjectReducer
-
-// });
-const store = createStore(reducer);
-//const store = createStore(appReducer, {});
+const store = configureStore({
+	reducer,
+});
 
 export default store;

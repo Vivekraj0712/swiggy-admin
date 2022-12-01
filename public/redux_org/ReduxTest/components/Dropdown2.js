@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { filter_chapters } from '../../redux/actions/Action';
+import { filter_chapters } from '../../../redux/actions/Action';
 // import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Select } from '@chakra-ui/react';

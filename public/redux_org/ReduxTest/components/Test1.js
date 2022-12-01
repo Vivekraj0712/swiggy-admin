@@ -2,7 +2,7 @@ import React from 'react';
 import Dropdown from './Dropdown';
 import ChapterComponent from './ChapterComponent';
 
-const Test = () => {
+const Test1 = () => {
 	return (
 		<>
 			<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -13,4 +13,4 @@ const Test = () => {
 	);
 };
 
-export default Test;
+export default Test1;

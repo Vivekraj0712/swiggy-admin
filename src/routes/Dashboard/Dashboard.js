@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flex, Thead, Tr, Th, Table, Tbody, VStack } from '@chakra-ui/react';
-import Sidebar from '../../components/Sidebar';
+import Sidebar from '../../components/CommonModal/Sidebar';
 import './Dashboard.css';
 import OrdersContent from './OrdersContent';
 

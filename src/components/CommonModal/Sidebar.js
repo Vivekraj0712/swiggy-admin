@@ -3,11 +3,11 @@ import { Square, Button, Flex } from '@chakra-ui/react';
 // import CommonDrawer from './CommonDrawer/CommonDrawer';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { add_chapter } from '../redux/actions/Action';
-import DishModalContent from '../routes/Dashboard/DishModalContent';
-import { PageLoader } from '../Routes';
+//import { add_chapter } from '../redux/actions/Action';
+import DishModalContent from '../../routes/Dashboard/DishModalContent';
+import { PageLoader } from '../../Routes';
 
-const CommonDrawer = lazy(() => import('./CommonDrawer/CommonDrawer'));
+const CommonDrawer = lazy(() => import('../CommonDrawer/CommonDrawer'));
 
 const Sidebar = React.memo((props) => {
 	const { component } = props;
@@ -22,7 +22,7 @@ const Sidebar = React.memo((props) => {
 	};
 
 	const manageAddRedux = () => {
-		dispatch(add_chapter('vishal'));
+		//dispatch(add_chapter('vishal'));
 	};
 	// left code: position fixed
 	// right code : scrollable

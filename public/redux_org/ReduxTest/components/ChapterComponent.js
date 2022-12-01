@@ -12,13 +12,13 @@ import {
   Tfoot,
   Button,
 } from "@chakra-ui/react";
-import CommonModal from "../../components/CommonModal/CommonModal";
+import CommonModal from "../../../../src/components/CommonModal/CommonModal";
 import EditChapterComponent from "./EditChapterComponent";
 import AddChapterComponent from "./AddChapterComponent";
 import { add_chapters, delete_chapters } from "../../redux/actions/Action";
 import Stars1 from "./Stars1";
 import "./bg.css";
-import { edit_chapters } from "../../redux/actions/Action";
+import { edit_chapters } from "../../../redux/actions/Action";
 const ChapterComponent = () => {
   const starsArr = [1, 2, 3, 4, 5];
   const [showModal, setShowModal] = useState(false);
