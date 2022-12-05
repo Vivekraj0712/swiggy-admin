@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 
 function CommonDrawer(props) {
-  const { title, component, closeDrawer } = props
+  const { title, component, closeDrawer ,successCallBack} = props
   //const btnRef = React.useRef()
   const [showDrawer, setShowDrawer] = useState(true);
   const handleCloseDrawer = () => {
@@ -42,7 +42,7 @@ function CommonDrawer(props) {
             <Button variant='outline' mr={3} onClick={handleCloseDrawer}>
               Cancel
             </Button>
-            <Button colorScheme='blue'>Save</Button>
+            <Button onClick={successCallBack} colorScheme='blue'>Save</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { 
     AlertDialog,
     AlertDialogOverlay,
@@ -11,27 +11,34 @@ import {
 } from '@chakra-ui/react'
 
 const PopUp=(props)=>{
+  const {closePopUp,handleToast,title,description,successCallBack}=props
+  useEffect(()=>{
+  return ()=>{
+    handleToast()
+  }}
+  ,[])
+  
     return(
         <AlertDialog
-        isOpen={isOpen}
-        leastDestructiveRef={cancelRef}
-        onClose={onClose}
+        isOpen={true}
+        
+        onClose={closePopUp}
       >
         <AlertDialogOverlay>
           <AlertDialogContent>
             <AlertDialogHeader fontSize='lg' fontWeight='bold'>
-              Delete Customer
+              {title}
             </AlertDialogHeader>
 
             <AlertDialogBody>
-              Are you sure? You can't undo this action afterwards.
+              {description}
             </AlertDialogBody>
 
             <AlertDialogFooter>
-              <Button ref={cancelRef} onClick={onClose}>
+              <Button  onClick={closePopUp}>
                 Cancel
               </Button>
-              <Button colorScheme='red' onClick={onClose} ml={3}>
+              <Button colorScheme='red' onClick={successCallBack} ml={3}>
                 Delete
               </Button>
             </AlertDialogFooter>

@@ -1,0 +1,23 @@
+.hover-class{
+    display:none;
+    position:absolute;
+    background-color:grey;
+    color:white;
+    font-size:1rem;
+    top:100%;
+    right:0;
+}
+
+/* .link-class:hover+.hover-class{
+    display:block;
+} */
+
+
+.box-class{
+   position:relative 
+}
+
+.box-class:hover .hover-class{
+    display:block;
+}
+

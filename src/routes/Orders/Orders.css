@@ -1,0 +1,12 @@
+.edit-delete-image{
+    height:1rem;
+}
+
+.hflex{
+    display:flex;
+    gap:0.5rem;
+}
+
+.th-styles{
+    color:gray;
+}

@@ -1,261 +1,33 @@
-import React from 'react';
-import { Flex, Thead, Tr, Th, Table, Tbody, VStack } from '@chakra-ui/react';
-import Sidebar from '../../components/CommonModal/Sidebar';
-import './Dashboard.css';
-import OrdersContent from './OrdersContent';
-
-const Dashboard = () => {
-	const orderHeadings = ['ORDERID', 'DISH', 'PRICE', 'LOCATION', 'USERID', 'ACTIONS'];
-	const orderItems = [
-		{
-			orderid: '123',
-			dish: '2 Veg Burgers',
-			price: 'Rs.350',
-			location: 'Noida',
-			userid: '321',
-			isNumeric: true,
-		},
-		{
-			orderid: '124',
-			dish: '1 Masala Dosa',
-			price: 'Rs.150',
-			location: 'Delhi',
-			userid: '322',
-		},
-		{
-			orderid: '125',
-			dish: '1 veg Noodles',
-			price: 'Rs.250',
-			location: 'Noida',
-			userid: '321',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-		
-		{
-			orderid: '126',
-			dish: '2 plate Chicken Momos',
-			price: 'Rs.350',
-			location: 'Delhi',
-			userid: '432',
-		},
-	];
-	return (
-		<Table variant='striped' colorScheme='teal' className='vertical-line'>
-			<Thead>
-				<Tr>{orderHeadings ? orderHeadings.map((item) => <Th isNumeric={item.isNumeric}>{item}</Th>) : <div>Loader...</div>}</Tr>
-			</Thead>
-			<Tbody>{orderItems ? orderItems.map((item) => <OrdersContent ordersItems={item} />) : <div>Loader...</div>}</Tbody>
-		</Table>
-	);
-};
-export default React.memo(Dashboard);
+import React from "react"
+import { 
+    Stack,
+    Box
+ } from "@chakra-ui/react"
+ import { Link } from "react-router-dom"
+const Dashboard=()=>{
+    return(
+        <Stack direction={['column', 'row']} spacing='24px' style={{margin:"auto"}}>
+  <Link to="/orders">
+  <Box w='100px' p={4} h='90px' bg='yellow.200' style={{border:"1px solid gray",fontWeight:"bold",fontSize:"1rem",borderRadius:"15px"}}>
+    My Orders
+  </Box>
+  </Link>
+  <Link to="/dishes">
+  <Box w='100px' p={4} h='90px' bg='blue.200' style={{border:"1px solid gray",fontWeight:"bold",fontSize:"1rem",borderRadius:"15px"}}>
+    My Dishes
+  </Box>
+  </Link>
+  <Link to="addons">
+  <Box w='100px' p={4} h='90px' bg='red.200' style={{border:"1px solid gray",fontWeight:"bold",fontSize:"1rem",borderRadius:"15px"}}>
+    My AddOns
+  </Box>
+  </Link>
+  <Link to="/profile">
+  <Box w='100px' p={4} h='90px' bg='green.400' style={{border:"1px solid gray",fontWeight:"bold",fontSize:"1rem",borderRadius:"15px"}}>
+  My Profile  
+  </Box>
+  </Link>
+  </Stack>
+    )
+}
+export default Dashboard

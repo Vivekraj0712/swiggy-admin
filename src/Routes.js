@@ -2,30 +2,36 @@ import React, { lazy, Suspense, useEffect } from 'react';
 import { VStack, Box } from '@chakra-ui/react';
 import { Routes as ReactRoutes, Route, useNavigate } from 'react-router-dom';
 import Posts from './components/MiniProject/Posts';
-
-const Dashboard = lazy(() => import('./routes/Dashboard/Dashboard'));
-const Sidebar = lazy(() => import('./components/CommonModal/Sidebar'));
+import Dashboard from './routes/Dashboard/Dashboard';
+import Login from './routes/Login/Login';
+import SignUp from './routes/SignUp/SignUp';
+const Sidebar = lazy(() => import('./components/Sidebar/Sidebar'));
 const Dishes = lazy(() => import('./routes/Dishes/Dishes'));
-const Header = lazy(() => import('./components/Header'));
-//const Test1 = lazy(() => import('./ReduxTest/components/Test1'));
+const AddOns = lazy(() => import('./routes/AddOns/AddOns'));
+const Orders = lazy(() => import('./routes/Orders/Orders'));
+const Profile= lazy(()=> import('./routes/Profile/Profile'));
+//const Dashboard=lazy(()=>import('./routes/Dashboard/Dashboard'));
+const Header = lazy(() => import('./components/Header/Header'));
 const Test = lazy(() => import('./routes/Test'));
-
-
-//const Dropdown = lazy(() => import('./ReduxTest/components/Dropdown'));
-
 const Routes = () => {
-	return (
+    	return (
 		<Box sx={{ position: 'relative' }}>
-			{/* <Header /> */}
+			 <Header /> 
 			<VStack style={{ alignItems: 'stretch', overflow: 'hidden !important', justifyContent: 'stretch' }}>
 				<ReactRoutes>
 					{/* {Private Routes} */}
+					<Route path='/signup' element={<SignUp />} />
+					<Route path='/login' element={<Login />} />
 					<Route path='/dishes' element={<MainComponent isPrivate={true} component={<Dishes />} />} />
+					<Route path='/orders' element={<MainComponent isPrivate={true} component={<Orders />} />} />
+					<Route path='/profile' element={<MainComponent isPrivate={true} component={<Profile />} />} />
+					<Route path='/addons' element={<MainComponent isPrivate={true} component={<AddOns />} />} />
+					<Route path='/' element={<MainComponent isPrivate={true} component={<Dashboard />} />} />
 					{/* <Route path='/redux/dropdown' element={<MainComponent isPrivate={true} component={<Dropdown />} />} /> */}
 
 					{/* {Public Routes} */}
                     <Route path='/miniproject' element={<Posts/>}/>
-					<Route path='/' element={<MainComponent component={<Dashboard />} />} />
+					{/* <Route path='/' element={<MainComponent component={<Dashboard />} />} /> */}
 					 {/* <Route path='/redux/test' element={<MainComponent component={<Test1 />} />} />  */}
 					<Route path='/test' element={<MainComponent component={<Test />} />} />
 				</ReactRoutes>
@@ -61,7 +67,7 @@ const MainComponent = (props) => {
 	return (
 		<Suspense fallback={<PageLoader />}>
 			{/* {allowRoute ? <Sidebar component={component} /> : <Login />} */}
-			<Sidebar component={component} />
+			 <Sidebar component={component} /> 
 		</Suspense>
 	);
 };

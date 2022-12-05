@@ -1,0 +1,25 @@
+1.Filesystem(4 parts):eg: Dashboard.js,Dashboard.component.js,Dashboard.css,Dashboard.helper.js
+  a)Dashboard
+  b)Dishes
+  c)Orders
+  d)Add-Ons
+  e)Profile
+  f)User Registration(Sign-Up)
+  g)User Login(Sign In)
+
+
+2.Common Components
+
+3.Redux Toolkit Setup
+
+4.Forms
+ a)Add/Update Profile(route)
+ b)Add/Update Dishes(Drawer)
+ c)Add/Update Add-Ons(Drawer)
+
+ Add-Ons
+
+ Sno. | AddOn | Cost Price | Selling Price | Type | Unit | Actions
+ 
+
+ 
