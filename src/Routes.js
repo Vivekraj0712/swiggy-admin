@@ -5,18 +5,21 @@ import Posts from './components/MiniProject/Posts';
 import Dashboard from './routes/Dashboard/Dashboard';
 import Login from './routes/Login/Login';
 import SignUp from './routes/SignUp/SignUp';
+import Test from './routes/Test/Test';
+
 const Sidebar = lazy(() => import('./components/Sidebar/Sidebar'));
 const Dishes = lazy(() => import('./routes/Dishes/Dishes'));
 const AddOns = lazy(() => import('./routes/AddOns/AddOns'));
 const Orders = lazy(() => import('./routes/Orders/Orders'));
-const Profile= lazy(()=> import('./routes/Profile/Profile'));
+const Profile = lazy(() => import('./routes/Profile/Profile'));
 //const Dashboard=lazy(()=>import('./routes/Dashboard/Dashboard'));
 const Header = lazy(() => import('./components/Header/Header'));
-const Test = lazy(() => import('./routes/Test'));
+// const Test = lazy(() => import('./routes/Test'));
+
 const Routes = () => {
-    	return (
+	return (
 		<Box sx={{ position: 'relative' }}>
-			 <Header /> 
+			<Header />
 			<VStack style={{ alignItems: 'stretch', overflow: 'hidden !important', justifyContent: 'stretch' }}>
 				<ReactRoutes>
 					{/* {Private Routes} */}
@@ -30,9 +33,9 @@ const Routes = () => {
 					{/* <Route path='/redux/dropdown' element={<MainComponent isPrivate={true} component={<Dropdown />} />} /> */}
 
 					{/* {Public Routes} */}
-                    <Route path='/miniproject' element={<Posts/>}/>
+					<Route path='/miniproject' element={<Posts />} />
 					{/* <Route path='/' element={<MainComponent component={<Dashboard />} />} /> */}
-					 {/* <Route path='/redux/test' element={<MainComponent component={<Test1 />} />} />  */}
+					{/* <Route path='/redux/test' element={<MainComponent component={<Test1 />} />} />  */}
 					<Route path='/test' element={<MainComponent component={<Test />} />} />
 				</ReactRoutes>
 			</VStack>
@@ -67,7 +70,7 @@ const MainComponent = (props) => {
 	return (
 		<Suspense fallback={<PageLoader />}>
 			{/* {allowRoute ? <Sidebar component={component} /> : <Login />} */}
-			 <Sidebar component={component} /> 
+			<Sidebar component={component} />
 		</Suspense>
 	);
 };
