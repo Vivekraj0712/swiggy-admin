@@ -49,13 +49,14 @@ const Test = () => {
 	const handleChange = (e) => {
 		let idd = e.target.id;
 		let sessionCount = window.sessionStorage.getItem('counter') ? parseInt(window.sessionStorage.getItem('counter')) : 0;
+		// use counter
 		if (idd === 'add') {
 			setCounter(sessionCount + 1);
-			window.sessionStorage.setItem('counter', sessionCount + 1);
+			window.sessionStorage.setItem('counter', counter + 1);
 		}
 		if (idd === 'sub') {
-			setCounter(sessionCount - 1);
-			window.sessionStorage.setItem('counter', sessionCount - 1);
+			setCounter(counter - 1);
+			window.sessionStorage.setItem('counter', counter - 1);
 		}
 		if (idd === 'text') {
 			setCounter(parseInt(e.target.value));
