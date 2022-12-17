@@ -1,2 +1,2 @@
-const BASE_URL = 'https://jsonplaceholder.typicode.com';
+const BASE_URL = 'api/v1';
 export default BASE_URL;

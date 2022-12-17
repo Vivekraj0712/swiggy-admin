@@ -1,4 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch,useSelector } from "react-redux";
+import { getAllDishes } from "../../redux/reducers/DishReducer"
+import { getAllRestaurants } from "../../redux/reducers/RestaurantReducer"
 import {
   TableContainer,
   Table,
@@ -17,6 +20,7 @@ import CommonDrawer from "../../components/CommonDrawer/CommonDrawer";
 import Toast from "../../components/Toast/Toast";
 import PopUp from "../../components/PopUp/PopUp";
 const Dishes = () => {
+  const dispatch=useDispatch();
   const [showDrawer, setShowDrawer] = useState(false);
   const [showAddNewDrawer, setShowAddNewDrawer] = useState(false);
   const [data, setData] = useState({});
@@ -60,6 +64,11 @@ const Dishes = () => {
   const handleDeleteToast=()=>{
     setShowDeleteToast(false)
   }
+  useEffect(()=>{
+    dispatch(getAllDishes())
+   },[])
+   const restaurants=useSelector((state)=>state.dishes)
+  console.log({restaurants})
   return (
     <VStack>
       <AddNewDish openDrawer={openAddNewDrawer} />
