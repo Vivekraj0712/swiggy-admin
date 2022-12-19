@@ -11,7 +11,7 @@ export const editPost=createAsyncThunk(
 
     if (response) {
       //console.log(response)
-    
+
       return response.data;
     } else {
       return thunkAPI.rejectWithValue("Error getting Response");
@@ -55,7 +55,7 @@ const STATUS = {
 	FETCHING: 2,
 	FAILED: 3,
   };
-  
+
 
 
 const initialState = {
@@ -84,7 +84,7 @@ const postsSlice = createSlice({
     },
     [getAllPosts.fulfilled]: (state, action) => {
       state.allPosts = action.payload;
-	  state.getAllPostStatus= STATUS.SUCCESS;    
+	  state.getAllPostStatus= STATUS.SUCCESS;
     },
     [editPost.pending]: (state) => {
       state.editPostStatus = STATUS.FETCHING;
@@ -93,7 +93,7 @@ const postsSlice = createSlice({
       state.editPostStatus= STATUS.FAILED;
     },
     [editPost.fulfilled]: (state, action) => {
-      state.editPostData= action.payload;            
+      state.editPostData= action.payload;
       state.editPostStatus=STATUS.SUCCESS
       state.allPosts=current(state.allPosts).map((item)=>item.id===action.payload.id?{...item,title:action.payload.title,body:action.payload.body}:item)
     },
@@ -104,7 +104,7 @@ const postsSlice = createSlice({
       state.addPostStatus= STATUS.FAILED;
     },
     [addPost.fulfilled]: (state, action) => {
-      state.addPostData= action.payload;            
+      state.addPostData= action.payload;
       state.addPostStatus=STATUS.SUCCESS
       //console.log([...current(state.allPosts),action.payload])
       state.allPosts=[...current(state.allPosts),action.payload]
